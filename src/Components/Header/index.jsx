@@ -78,6 +78,7 @@ const Header = () => {
     setAnchorMyAcc(null);
   };
 
+
   const logout = () => {
     localStorage.removeItem("accessToken");
     context.setisLogin(false);
