@@ -24,7 +24,7 @@ const ForgotPassword = () => {
     confirmPassword: "",
   });
 
-  // ✅ Validate form fields dynamically
+  //  Validate form fields dynamically
   useEffect(() => {
     const { email, password, confirmPassword } = formFields;
     const valid =
@@ -35,7 +35,7 @@ const ForgotPassword = () => {
     setIsFormValid(valid);
   }, [formFields]);
 
-  // ✅ Handle input changes
+  //  Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormFields((prev) => ({
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
     }));
   };
 
-  // ✅ Submit form
+  //  Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password, confirmPassword } = formFields;
@@ -79,7 +79,7 @@ const ForgotPassword = () => {
           response.message || "Password reset successful."
         );
 
-        // ✅ Redirect to login after short delay
+        //  Redirect to login after short delay
         setTimeout(() => {
           localStorage.removeItem("userEmail");
           localStorage.removeItem("actionType");

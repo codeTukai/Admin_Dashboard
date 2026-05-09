@@ -22,7 +22,7 @@ const ChangePassword = () => {
 
   const token = localStorage.getItem("resetToken");
 
-  // ✅ Load verified email
+  //  Load verified email
   useEffect(() => {
     const savedEmail = localStorage.getItem("userEmail");
 

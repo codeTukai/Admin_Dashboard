@@ -100,7 +100,7 @@ function App() {
     getCat(); // Load categories with nesting
   }, []);
 
-  // ✅ Fetch and structure categories with subcategories
+  //  Fetch and structure categories with subcategories
   const getCat = async () => {
     try {
       const res = await fetchDataFromApi("/api/category");
@@ -191,7 +191,7 @@ function App() {
   { path: "/product/addRams", element: withLayout(AddRAMS) },
   { path: "/product/addWeight", element: withLayout(AddWeight) },
   { path: "/product/addSize", element: withLayout(AddSize) },
- // ✅ NEW: dynamic route
+ //  NEW: dynamic route
   { path: "/homeSlider/list", element: withLayout(HomeSliderBanners) },
   { path: "/category/list", element: withLayout(CategoryList) },
   { path: "/SubCategory/list", element: withLayout(SubCategoryList) },

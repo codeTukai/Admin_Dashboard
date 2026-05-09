@@ -32,7 +32,7 @@ const HomeSliderBanners = () => {
   const [selectedIds, setSelectedIds] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // ✅ Fetch slider data
+  //  Fetch slider data
   const getData = async () => {
     setLoading(true);
     try {
@@ -49,14 +49,14 @@ const HomeSliderBanners = () => {
     getData();
   }, [context?.isOpenFullScreenPanel]);
 
-  // ✅ Checkbox: individual row
+  //  Checkbox: individual row
   const handleCheckboxChange = (id) => {
     setSelectedIds((prev) =>
       prev.includes(id) ? prev.filter((pid) => pid !== id) : [...prev, id]
     );
   };
 
-  // ✅ Checkbox: delete selected
+  //  Checkbox: delete selected
   const handleDeleteSelected = async () => {
     if (selectedIds.length === 0) return;
     const confirm = window.confirm("Delete selected slides?");
@@ -79,7 +79,7 @@ const HomeSliderBanners = () => {
     }
   };
 
-  // ✅ Checkbox: delete single slide
+  //  Checkbox: delete single slide
   const deleteSlide = async (id) => {
     const confirm = window.confirm("Are you sure you want to delete this slide?");
     if (!confirm) return;

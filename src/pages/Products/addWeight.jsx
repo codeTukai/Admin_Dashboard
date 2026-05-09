@@ -21,7 +21,7 @@ const AddWeight = () => {
   const [editId, setEditId] = useState("");
   const context = useContext(MyContext);
 
-  // ✅ Fetch RAMs
+  //  Fetch RAMs
   const getRams = async () => {
     try {
       const res = await fetchDataFromApi(`/api/product/productWeight/get`);
@@ -80,7 +80,7 @@ const AddWeight = () => {
     }
   };
 
-  // ✅ Delete RAM
+  //  Delete RAM
   const deleteRam = (id) => {
     deleteData(`/api/product/productWeight/${id}`).then((res) => {
       getRams();

@@ -34,8 +34,8 @@ const EditProduct = () => {
     rating: 4,
     isFeatured: false,
     discount: "",
-    productRam: [], // ✅ must be an array
-    size: [], // ✅ must be an array
+    productRam: [], 
+    size: [], // 
     productWeight: [],
     bannerImages: [],
     bannerTitleName: "",
@@ -53,7 +53,7 @@ const EditProduct = () => {
 
       const product = res.product;
 
-      // ✅ Set form fields
+   
 setFormFields({
   name: product?.name || "",
   description: product?.description || "",
@@ -117,17 +117,17 @@ setFormFields({
 
 
 
-      // ✅ Also set the `images` state used for uploading
+      //  Also set the image state used for uploading
       const formattedImages = (product.images || []).map((img) =>
         img.startsWith("http") ? img : `${BASE_IMAGE_URL}${img}`
       );
-      setImages(formattedImages); // ✅ sets previewable Cloudinary URLs
+      setImages(formattedImages); //  sets previewable Cloudinary URLs
     }
   });
 }, [context?.isOpenFullScreenPanel?.id]);
 
 
-  // 🔁 Add this dependency so it runs on ID change
+  //  Add this dependency so it runs on ID change
 
   const [isLoading, setIsLoading] = useState(false);
   const [images, setImages] = useState([]);
@@ -158,7 +158,7 @@ const handleImageUpload = async (e) => {
 
   setIsLoading(true);
   try {
-    const res = await uploadImage("/api/product/uploadImages", formData); // ✅ use product endpoint
+    const res = await uploadImage("/api/product/uploadImages", formData); //  use product endpoint
     const uploaded = res?.data?.images || res?.images || [];
 
     if (uploaded.length) {

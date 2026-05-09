@@ -55,7 +55,7 @@ const AddProduct = () => {
     ));
   };
 
-  // ✅ Render Weight options
+  //  Render Weight options
   const renderWeightOptions = () => {
     return weightOptions.map((item) => (
       <MenuItem key={item._id} value={item.name}>
@@ -64,7 +64,7 @@ const AddProduct = () => {
     ));
   };
 
-  // ✅ Render Size options
+  //  Render Size options
   const renderSizeOptions = () => {
     return sizeOptions.map((item) => (
       <MenuItem key={item._id} value={item.name}>
@@ -200,7 +200,7 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // ✅ Render RAM options
+    //  Render RAM options
 
     const requiredFields = [
       [formFields.name, "Please enter product name"],
@@ -411,7 +411,7 @@ const AddProduct = () => {
                   setFormFields((prev) => ({
                     ...prev,
                     thirdsubCatId: selectedId,
-                    thirdsubCatName: selectedName, // ✅ Store name
+                    thirdsubCatName: selectedName, //  Store name
                   }));
                 }}
                 displayEmpty

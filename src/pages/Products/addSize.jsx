@@ -21,7 +21,7 @@ const AddSize = () => {
   const [editId, setEditId] = useState("");
   const context = useContext(MyContext);
 
-  // ✅ Fetch RAMs
+  //  Fetch RAMs
   const getRams = async () => {
     try {
       const res = await fetchDataFromApi(`/api/product/productSize/get`);
@@ -33,7 +33,7 @@ const AddSize = () => {
     }
   };
 
-  // ✅ Create new RAM
+  //  Create new RAM
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -80,7 +80,7 @@ const AddSize = () => {
     }
   };
 
-  // ✅ Delete RAM
+  //  Delete RAM
   const deleteRam = (id) => {
     deleteData(`/api/product/productSize/${id}`).then((res) => {
       getRams();

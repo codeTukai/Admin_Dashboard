@@ -45,7 +45,7 @@ const AddSubCategory = () => {
     }));
   };
 
-  // 🌿 Third-level category
+  //  Third-level category
   const handleChangeProductCat2 = (event) => {
     const selectedId = event.target.value;
     const subcategory = context.catData
@@ -128,10 +128,10 @@ const AddSubCategory = () => {
       setFormFields2({ name: "", parentCatName: null, parentId: null });
       setProductCat2("");
 
-      // ✅ WAIT for categories to refresh
+      //  WAIT for categories to refresh
       await context.getCat();
 
-      // ✅ NAVIGATE AFTER DATA UPDATE
+      //  NAVIGATE AFTER DATA UPDATE
       navigate("/Category/list", { replace: true });
     } else {
       context.alertBox("error", res?.message);
