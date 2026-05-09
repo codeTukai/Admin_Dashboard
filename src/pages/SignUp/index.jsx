@@ -75,7 +75,15 @@ const SignUp = () => {
   return (
     <section className="section py-10">
       <div className="container">
+         
+      <img src="/pattern.jpg" className="w-[130px]" alt="logo" />
+                
         <div className="card shadow-md w-[400px] m-auto rounded-md bg-white p-5 px-10">
+        <img
+        src="/OIP.jpg"
+        alt=""
+        className="w-full fixed top-0 left-0 opacity-5 z-0"
+      />
           <h3 className="text-center text-[18px] text-black">
             Register with a new Account
           </h3>
@@ -141,7 +149,7 @@ const SignUp = () => {
                 className="btn-org btn-lg w-full flex gap-3"
               >
                 {isLoading ? (
-                  <CircularProgress color="inherit" size={24} />
+                  <CircularProgress color="red" size={24} />
                 ) : (
                   "Register"
                 )}

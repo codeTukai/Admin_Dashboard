@@ -149,7 +149,7 @@ const Login = () => {
       {/* Header */}
       <header className="fixed w-full top-0 left-0 px-4 py-3 flex justify-between items-center z-50 bg-white shadow-sm">
         <Link to={"/"}>
-          <img src="/OIP.webp" className="w-[130px]" alt="logo" />
+          <img src="/pattern.jpg" className="w-[130px]" alt="logo" />
         </Link>
         {context?.isLogin ? (
           <>
@@ -213,7 +213,7 @@ const Login = () => {
 
       {/* Background */}
       <img
-        src="/pattern.jpg"
+        src="/background.jpeg"
         alt=""
         className="w-full fixed top-0 left-0 opacity-5 z-0"
       />
