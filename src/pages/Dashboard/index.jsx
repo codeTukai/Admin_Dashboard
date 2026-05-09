@@ -104,8 +104,8 @@ const handleChangeCatFilter = (event) => {
           setProductData(res.products);
           setTimeout(()=>{
 
-            setLoading(false); // ✅ update loading state after fetching
-          }, 300); // ✅ update local product list
+            setLoading(false); //  update loading state after fetching
+          }, 300); //  update local product list
         } else {
           setProductData([]);
           context.alertBox("error", "No products found for this category");
@@ -121,7 +121,7 @@ const handleChangeCatFilter = (event) => {
   const handleChangeSubCatFilter = (event) => {
     const subCatId = event.target.value;
     setSubCategoryFilterVal(subCatId);
-    setLoading(true); // ✅ update loading state before fetching
+    setLoading(true); //  update loading state before fetching
     setThirdSubCatFilterVal("");
 
 
@@ -135,7 +135,7 @@ const handleChangeCatFilter = (event) => {
         if (res?.error === false) {
           setProductData(res?.products);
           setTimeout(()=>{
-            setLoading(false); // ✅ update loading state after fetching
+            setLoading(false); //  update loading state after fetching
           }, 300);
         } else {
           setProductData([]);
@@ -160,8 +160,8 @@ const handleChangeCatFilter = (event) => {
         if (res?.products?.length > 0) {
           setProductData(res.products);
           setTimeout(() => {
-            setLoading(false); // ✅ update loading state after fetching
-          }, 300); // ✅ update local product list
+            setLoading(false); //  update loading state after fetching
+          }, 300); // update local product list
         } else {
           setProductData([]);
           context.alertBox("error", "No products found");

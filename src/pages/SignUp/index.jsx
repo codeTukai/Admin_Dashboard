@@ -73,14 +73,15 @@ const SignUp = () => {
   };
 
   return (
-    <section className="section py-10">
-      <div className="container">
+    <section className="section py-10 min-h-screen bg-cover bg-center bg-no-repeat flex items-center"
+      style={{ backgroundImage: "url('/background.jpeg')" }}>
+     
          
-      <img src="/pattern.jpg" className="w-[130px]" alt="logo" />
+      <img src="/pattern.jpg" className="w-[130px] " alt="logo"/>
                 
         <div className="card shadow-md w-[400px] m-auto rounded-md bg-white p-5 px-10">
         <img
-        src="/OIP.jpg"
+        src="/background.jpeg"
         alt=""
         className="w-full fixed top-0 left-0 opacity-5 z-0"
       />
@@ -176,7 +177,7 @@ const SignUp = () => {
             </Button>
           </form>
         </div>
-      </div>
+      
     </section>
   );
 };

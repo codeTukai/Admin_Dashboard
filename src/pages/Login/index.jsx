@@ -211,9 +211,11 @@ const Login = () => {
         )}
       </header>
 
-      {/* Background */}
-      <img
-        src="/background.jpeg"
+     
+      <div className="w-full">
+
+        <img
+        src="/background_login.jpg"
         alt=""
         className="w-full fixed top-0 left-0 opacity-5 z-0"
       />
@@ -322,6 +324,9 @@ const Login = () => {
           </Button>
         </form>
       </div>
+
+      </div>
+
     </section>
   );
 };
