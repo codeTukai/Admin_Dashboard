@@ -30,7 +30,7 @@ const SignUp = () => {
 
   const validValue = Object.values(formFields).every((el) => el.trim() !== "");
 
-  // ✅ Alert wrapper
+  //  Alert wrapper
   const showAlert = (type, msg) => {
     if (context && typeof context.alertBox === "function") {
       context.alertBox(type, msg);

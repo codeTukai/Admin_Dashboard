@@ -137,7 +137,7 @@ const Login = () => {
     }
   };
 
-  // ✅ Auto redirect after login + userData ready
+  //  Auto redirect after login + userData ready
   useEffect(() => {
     if (context.isLogin && context.userData?._id) {
       navigate("/");
@@ -149,7 +149,7 @@ const Login = () => {
       {/* Header */}
       <header className="fixed w-full top-0 left-0 px-4 py-3 flex justify-between items-center z-50 bg-white shadow-sm">
         <Link to={"/"}>
-          <img src="/pattern.jpg" className="w-[130px]" alt="logo" />
+          <img src="/OIP.webp" className="w-[130px]" alt="logo" />
         </Link>
         {context?.isLogin ? (
           <>
