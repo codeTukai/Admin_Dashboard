@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
-// ✅ POST function
+//  POST function
 export const postData = async (url, formData, includeToken = true) => {
   try {
     const headers = {
@@ -45,18 +45,18 @@ export const postData = async (url, formData, includeToken = true) => {
 };
 
 
-// ✅ GET function using axios
 
-const DISABLE_FETCH = false; // ✅ Disable all API calls for debugging
+
+const DISABLE_FETCH = false; //  Disable all API calls for debugging
 
 export const fetchDataFromApi = async (url, includeToken = true) => {
   if (DISABLE_FETCH) {
-    console.warn("⚠️ fetchDataFromApi is DISABLED via DISABLE_FETCH flag.");
+    console.warn(" fetchDataFromApi is DISABLED via DISABLE_FETCH flag.");
     return { error: true, message: "Fetch is disabled." };
   }
 
   if (!apiUrl) {
-    console.error("❌ VITE_API_URL is not defined.");
+    console.error(" VITE_API_URL is not defined.");
     return { error: true, message: "API base URL is missing." };
   }
 
@@ -190,7 +190,7 @@ export const deleteData = async (url, data = null) => {
   };
 
   if (data) {
-    config.body = JSON.stringify(data); // ✅ attach body when needed
+    config.body = JSON.stringify(data); //  attach body when needed
   }
 
   const response = await fetch(fullUrl, config);
