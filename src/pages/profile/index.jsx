@@ -54,7 +54,7 @@ const Profile = () => {
         context.alertBox("success", res.message || "Profile updated successfully.");
         context.fetchUserDetails();
         setEditing(false);
-        navigate("/"); // redirect after save
+        navigate("/"); 
       } else {
         context.alertBox("error", res.message || "Failed to update profile.");
       }

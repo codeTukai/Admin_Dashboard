@@ -31,7 +31,7 @@ const AddSubCategory = () => {
   const context = useContext(MyContext);
   const navigate = useNavigate();
 
-  // 🌱 Sub-category
+  // Sub-category
   const handleChangeProductCat = (event) => {
     const selectedId = event.target.value;
     const selectedCategory = context.catData.find(
