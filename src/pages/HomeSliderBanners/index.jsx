@@ -74,7 +74,7 @@ const HomeSliderBanners = () => {
         context.alertBox("error", res.message || "Deletion failed");
       }
     } catch (err) {
-      console.error("❌ Deletion error:", err);
+      console.error(" Deletion error:", err);
       context.alertBox("error", "Something went wrong.");
     }
   };
