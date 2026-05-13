@@ -178,25 +178,37 @@ function App() {
   );
 
  const router = createBrowserRouter([
-  { path: "/", element: withLayout(DashBoard) },
+  {
+    path: "/",
+    element: withLayout(DashBoard),
+    errorElement: <h1>404 Page Not Found</h1>,
+  },
+
   { path: "/login", element: <Login /> },
-  
   { path: "/verify", element: <Verify /> },
   { path: "/sign-up", element: <SignUp /> },
   { path: "/forgot-password", element: <ForgotPassword /> },
   { path: "/change-password", element: <ChangePassword /> },
+
   { path: "/profile", element: withLayout(Profile) },
   { path: "/products", element: withLayout(Products) },
   { path: "/product/:id", element: withLayout(ProductDetails) },
   { path: "/product/addRams", element: withLayout(AddRAMS) },
   { path: "/product/addWeight", element: withLayout(AddWeight) },
   { path: "/product/addSize", element: withLayout(AddSize) },
- //  NEW: dynamic route
+
   { path: "/homeSlider/list", element: withLayout(HomeSliderBanners) },
   { path: "/category/list", element: withLayout(CategoryList) },
+
   { path: "/SubCategory/list", element: withLayout(SubCategoryList) },
+
   { path: "/users", element: withLayout(Users) },
   { path: "/orders", element: withLayout(Orders) },
+
+  {
+    path: "*",
+    element: <h1>404 Page Not Found</h1>
+  }
 ]);
 
 
