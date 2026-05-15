@@ -44,12 +44,12 @@ This project is designed for managing eCommerce operations such as products, cat
 
 ---
 
-# ⚙️ Installation & Setup
+#  Installation & Setup
 
-## 1️⃣ Clone Repository
+## 1️ Clone Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/codeTukai/AdminRepo
 ```
 
 ---
