@@ -5,7 +5,7 @@ This project is designed for managing eCommerce operations such as products, cat
 
 ---
 
-# 🚀 Live Features
+# 🚀 Features
 
 - 🔐 Authentication System
 - 👤 User Management
@@ -42,6 +42,7 @@ This project is designed for managing eCommerce operations such as products, cat
 - Mongoose
 - JWT Authentication
 
+---
 
 # ⚙️ Installation & Setup
 
@@ -51,11 +52,15 @@ This project is designed for managing eCommerce operations such as products, cat
 git clone <your-repository-url>
 ```
 
+---
+
 ## 2️⃣ Navigate to Project Folder
 
 ```bash
 cd admin-dashboard
 ```
+
+---
 
 ## 3️⃣ Install Dependencies
 
@@ -65,7 +70,7 @@ npm install
 
 ---
 
-# ▶️ Run Development Server
+## 4️⃣ Start Development Server
 
 ```bash
 npm run dev
@@ -164,8 +169,7 @@ You can deploy this project on:
 
 # 👨‍💻 Author
 
-**Tukai Ghosh**
-
+**Tukai Ghosh**  
 Frontend & Full Stack Developer
 
 ---
