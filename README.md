@@ -1,12 +1,179 @@
-# React + Vite
+# 🛒 Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and fully responsive Admin Dashboard built with React and Vite.  
+This project is designed for managing eCommerce operations such as products, categories, users, orders, authentication, and analytics through an intuitive admin interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 Authentication System
+- 👤 User Management
+- 📦 Product Management
+- 🗂️ Category & Subcategory Management
+- 🖼️ Image Upload with Preview
+- 📊 Dashboard Analytics
+- 🛍️ Order Management
+- 🔎 Search & Filtering
+- 📱 Fully Responsive Design
+- ⚡ Fast Performance with Vite
+- 🌙 Modern UI Design
+- 🔔 Toast Notifications
+- ☁️ Cloudinary Image Upload Support
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+- React JS
+- Vite
+- React Router DOM
+- Context API
+- Material UI (MUI)
+- Tailwind CSS
+- Axios
+- React Hot Toast
+
+## Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone <your-repository-url>
+```
+
+---
+
+## 2️⃣ Navigate to Project Folder
+
+```bash
+cd admin-dashboard
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 4️⃣ Start Development Server
+
+```bash
+npm run dev
+```
+
+Application will run on:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+# 🏗️ Production Build
+
+```bash
+npm run build
+```
+
+---
+
+# 👀 Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+# 🌐 Deployment
+
+You can deploy this project on:
+
+- Vercel
+- Netlify
+- Render
+
+---
+
+# 📸 Dashboard Modules
+
+- Dashboard Overview
+- Products
+- Categories
+- Subcategories
+- Orders
+- Customers
+- Authentication
+- Profile Settings
+
+---
+
+# 🔒 Authentication Features
+
+- Login
+- Logout
+- Forgot Password
+- Reset Password
+- JWT Token Authentication
+- Protected Routes
+
+---
+
+# 📦 Product Features
+
+- Add Product
+- Edit Product
+- Delete Product
+- Product Image Upload
+- Category Selection
+- Product Filtering
+- Pagination
+
+---
+
+# 🎨 UI Features
+
+- Responsive Sidebar
+- Material UI Components
+- Tailwind Utility Styling
+- Fullscreen Dialog Forms
+- Loading States
+- Toast Notifications
+
+---
+
+# 📈 Future Improvements
+
+- Payment Integration
+- Real-time Notifications
+- Sales Reports
+- Dark Mode
+- Multi-language Support
+
+---
+
+# 👨‍💻 Author
+
+**Tukai Ghosh**  
+Frontend & Full Stack Developer
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
