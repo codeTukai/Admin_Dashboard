@@ -8,198 +8,138 @@ import { MyContext } from "../../App";
 import { postData } from "../../utils/api";
 
 const ForgotPassword = () => {
-  const [showNewPassword, setShowNewPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(false);
 
   const context = useContext(MyContext);
   const navigate = useNavigate();
 
-  const storedEmail = localStorage.getItem("userEmail") || "";
-
-  const [formFields, setFormFields] = useState({
-    email: storedEmail,
-    password: "",
-    confirmPassword: "",
-  });
-
-  //  Validate form fields dynamically
-  useEffect(() => {
-    const { email, password, confirmPassword } = formFields;
-    const valid =
-      email.trim() !== "" &&
-      password.trim().length >= 6 &&
-      confirmPassword.trim().length >= 6 &&
-      password === confirmPassword;
-    setIsFormValid(valid);
-  }, [formFields]);
-
-  //  Handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormFields((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  //  Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password, confirmPassword } = formFields;
 
-    if (!email || !password || !confirmPassword) {
-      context.openAlertBox("error", "Please fill in all fields.");
-      return;
-    }
-
-    if (password.length < 6) {
-      context.openAlertBox("error", "Password must be at least 6 characters.");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      context.openAlertBox("error", "Passwords do not match.");
+    if (!email.trim()) {
+      context.openAlertBox(
+        "error",
+        "Please enter your email"
+      );
       return;
     }
 
     try {
+
       setIsLoading(true);
 
-      const response = await postData("/api/user/forgot-password", {
-        email: email.trim(),
-        newPassword: password.trim(),
-        confirmPassword: confirmPassword.trim(),
-      });
+      const response = await postData(
+        "/api/user/forgot-password",
+        {
+          email: email.trim(),
+        }
+      );
 
-      if (response?.error === false) {
+      if (response?.success) {
+
         context.openAlertBox(
           "success",
-          response.message || "Password reset successful."
+          response?.message || "OTP sent successfully"
         );
 
-        //  Redirect to login after short delay
-        setTimeout(() => {
-          localStorage.removeItem("userEmail");
-          localStorage.removeItem("actionType");
-          navigate("/login", { replace: true });
-        }, 1500);
+        // save email
+        localStorage.setItem(
+          "userEmail",
+          email.trim()
+        );
+
+        // go verify page
+        navigate("/verify");
+
       } else {
-        context.openAlertBox("error", response?.message || "Reset failed.");
+
+        context.openAlertBox(
+          "error",
+          response?.message || "Failed to send OTP"
+        );
       }
+
     } catch (error) {
-      console.error("Reset error:", error);
-      context.openAlertBox("error", "Something went wrong.");
+
+      console.error(error);
+
+      context.openAlertBox(
+        "error",
+        "Something went wrong"
+      );
+
     } finally {
+
       setIsLoading(false);
     }
   };
 
   return (
     <section className="section py-10">
+
       <div className="container">
-        <div className="card shadow-md w-[400px] m-auto rounded-md bg-white p-5 px-10">
-          <h3 className="text-center text-[18px] text-black font-semibold">
-            Reset Password
+
+        <div className="card shadow-md w-[400px] max-w-[95%] m-auto rounded-md bg-white p-5 px-10">
+
+          <h3 className="text-center text-[22px] text-black font-semibold">
+            Forgot Password
           </h3>
 
-          <form className="w-full mt-5" onSubmit={handleSubmit}>
-            {/* Email Field */}
+          <p className="text-center text-[14px] text-gray-500 mt-2 mb-5">
+            Enter your registered email to receive OTP
+          </p>
+
+          <form
+            className="w-full mt-5"
+            onSubmit={handleSubmit}
+          >
+
+            {/* Email */}
             <div className="form-group w-full mb-5">
+
               <TextField
                 type="email"
-                label="Email"
+                label="Email Address"
                 variant="outlined"
                 fullWidth
                 name="email"
-                value={formFields.email}
-                disabled
-                helperText="Email verified via OTP"
-              />
-            </div>
-
-            {/* New Password */}
-            <div className="form-group w-full mb-5 relative">
-              <TextField
-                type={showNewPassword ? "text" : "password"}
-                label="New Password"
-                variant="outlined"
-                fullWidth
-                name="password"
-                value={formFields.password}
+                value={email}
                 disabled={isLoading}
-                onChange={handleInputChange}
-                autoComplete="new-password"
-              />
-              <Button
-                type="button"
-                aria-label={showNewPassword ? "Hide password" : "Show password"}
-                onClick={() => setShowNewPassword((prev) => !prev)}
-                sx={{
-                  position: "absolute",
-                  top: 10,
-                  right: 10,
-                  minWidth: 35,
-                  width: 35,
-                  height: 35,
-                  borderRadius: "50%",
-                  color: "black",
-                }}
-              >
-                {showNewPassword ? <IoEye /> : <IoEyeOff />}
-              </Button>
-            </div>
-
-            {/* Confirm Password */}
-            <div className="form-group w-full mb-5 relative">
-              <TextField
-                type={showConfirmPassword ? "text" : "password"}
-                label="Confirm Password"
-                variant="outlined"
-                fullWidth
-                name="confirmPassword"
-                value={formFields.confirmPassword}
-                disabled={isLoading}
-                onChange={handleInputChange}
-                autoComplete="new-password"
-              />
-              <Button
-                type="button"
-                aria-label={
-                  showConfirmPassword ? "Hide password" : "Show password"
+                onChange={(e) =>
+                  setEmail(e.target.value)
                 }
-                onClick={() => setShowConfirmPassword((prev) => !prev)}
-                sx={{
-                  position: "absolute",
-                  top: 10,
-                  right: 10,
-                  minWidth: 35,
-                  width: 35,
-                  height: 35,
-                  borderRadius: "50%",
-                  color: "black",
-                }}
-              >
-                {showConfirmPassword ? <IoEye /> : <IoEyeOff />}
-              </Button>
+              />
+
             </div>
 
-            {/* Submit Button */}
+            {/* Submit */}
             <Button
               type="submit"
-              disabled={!isFormValid || isLoading}
+              disabled={!email || isLoading}
               className="btn-org btn-lg w-full flex gap-3"
             >
-              {isLoading ? (
-                <CircularProgress color="inherit" size={20} />
-              ) : (
-                "Change Password"
-              )}
+
+              {
+                isLoading ? (
+                  <CircularProgress
+                    color="inherit"
+                    size={20}
+                  />
+                ) : (
+                  "SEND OTP"
+                )
+              }
+
             </Button>
+
           </form>
+
         </div>
+
       </div>
+
     </section>
   );
 };

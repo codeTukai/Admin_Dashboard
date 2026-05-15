@@ -17,9 +17,10 @@ const Verify = () => {
     const email = localStorage.getItem("userEmail");
     if (!email) {
       context.alertBox("error", "Email not found. Please try again.");
-      navigate("/login");
+      
     } else {
       setUserEmail(email);
+      
     }
   }, [navigate, context]);
 
@@ -49,6 +50,7 @@ const Verify = () => {
 
       if (res?.error === false) {
         context.alertBox("success", res?.message || "OTP verified successfully");
+        navigate("/")
 
         localStorage.removeItem("userEmail");
         localStorage.removeItem("actionType");

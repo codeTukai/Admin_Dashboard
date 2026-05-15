@@ -145,9 +145,12 @@ const Login = () => {
   }, [context.isLogin, context.userData]);
 
   return (
-    <section className="bg-white min-h-screen relative">
+    <section className="bg-white min-h-screen relative section py-10 bg-cover bg-center bg-no-repeat flex items-center"
+    style={{ backgroundImage: "url('/background.jpeg')" }}
+    >
       {/* Header */}
       <header className="fixed w-full top-0 left-0 px-4 py-3 flex justify-between items-center z-50 bg-white shadow-sm">
+        
         <Link to={"/"}>
           <img src="/pattern.jpg" className="w-[130px]" alt="logo" />
         </Link>

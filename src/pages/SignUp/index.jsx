@@ -28,7 +28,7 @@ const SignUp = () => {
     }));
   };
 
-  const validValue = Object.values(formFields).every((el) => el.trim() !== "");
+  const validValue = Object.values(formFields).every((element) => element.trim() !== "");
 
   //  Alert wrapper
   const showAlert = (type, msg) => {
@@ -77,7 +77,7 @@ const SignUp = () => {
       style={{ backgroundImage: "url('/background.jpeg')" }}>
      
          
-      <img src="/pattern.jpg" className="w-[130px] " alt="logo"/>
+      <img src="/pattern.jpg" className="w-[130px] relative -top-90 left-10" alt="logo"/>
                 
         <div className="card shadow-md w-[400px] m-auto rounded-md bg-white p-5 px-10">
         <img
