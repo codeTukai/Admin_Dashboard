@@ -9,20 +9,31 @@ export const postData = async (url, formData, includeToken = true) => {
       "Content-Type": "application/json",
     };
 
+    // Add token if available
     if (includeToken) {
       const token = localStorage.getItem("accessToken");
+
       if (token) {
         headers.Authorization = `Bearer ${token}`;
       }
     }
 
-    const response = await fetch(apiUrl + url, {
+    const response = await fetch(`${apiUrl}${url}`, {
       method: "POST",
       headers,
       body: JSON.stringify(formData),
     });
 
-    const data = await response.json();
+    // Read response safely
+    const text = await response.text();
+
+    let data = {};
+
+    try {
+      data = text ? JSON.parse(text) : {};
+    } catch (err) {
+      console.error("Invalid JSON response:", text);
+    }
 
     if (response.ok) {
       return data;
@@ -36,10 +47,11 @@ export const postData = async (url, formData, includeToken = true) => {
     }
   } catch (error) {
     console.error("POST request failed:", error);
+
     return {
       error: true,
       success: false,
-      message: error.message || "Request failed",
+      message: error.message || "Network Error",
     };
   }
 };
