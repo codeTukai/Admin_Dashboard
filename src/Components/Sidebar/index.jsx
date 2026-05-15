@@ -9,6 +9,7 @@ import { FaFirstOrder, FaAngleDown } from "react-icons/fa6";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { Collapse } from "react-collapse";
 import { MyContext } from "../../App";
+// import {logout} from "../../../src/pages/"
 
 const Sidebar = () => {
   const [openHomeSlides, setOpenHomeSlides] = useState(false);
