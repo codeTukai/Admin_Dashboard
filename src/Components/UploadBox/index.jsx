@@ -9,6 +9,7 @@ const UploadBox = ({ multiple = false, onChange }) => {
     const file = e.target.files[0];
     if (!file) return;
 
+
     // Show local preview (for single file only)
     const previewURL = URL.createObjectURL(file);
     setPreview(previewURL);
