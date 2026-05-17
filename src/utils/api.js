@@ -137,6 +137,8 @@ export const editData = async (url, data, config = {}) => {
 // src/utils/api.js
 export const uploadImage = async (url, formData) => {
   const token = localStorage.getItem("accessToken");
+  console.log(token);
+  
 
   // Step 1: Validate VITE_API_URL and the url argument
   const baseUrl = import.meta.env.VITE_API_URL;

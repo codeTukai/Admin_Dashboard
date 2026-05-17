@@ -25,12 +25,12 @@ const AddCategory = () => {
     const storedCategory = categoryFromContext || JSON.parse(localStorage.getItem("editCategory"));
     if (storedCategory) {
       setFormField({ name: storedCategory.name || "" });
-      const imgs = Array.isArray(storedCategory.images)
+      const images = Array.isArray(storedCategory.images)
         ? storedCategory.images
         : storedCategory.imageUrl
         ? [storedCategory.imageUrl]
         : [];
-      setImages(imgs);
+      setImages(images);
     } else {
       setFormField({ name: "" });
       setImages([]);
