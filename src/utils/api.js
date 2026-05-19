@@ -158,7 +158,7 @@ export const uploadImage = async (url, formData) => {
 
   // Step 2: Display what’s being uploaded
   for (let pair of formData.entries()) {
-    console.log(`${pair[0]}:`, pair[1]);
+    // console.log(`${pair[0]}:`, pair[1]);
   }
 
 
