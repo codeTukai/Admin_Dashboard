@@ -154,13 +154,13 @@ export const uploadImage = async (url, formData) => {
 
   const fullUrl = baseUrl + url;
 
-  console.log("uploadImage ➜", fullUrl);
+  // console.log("uploadImage ➜", fullUrl);
 
   // Step 2: Display what’s being uploaded
   for (let pair of formData.entries()) {
     console.log(`${pair[0]}:`, pair[1]);
   }
-console.log(pair);
+
 
   try {
     const response = await fetch(fullUrl, {
