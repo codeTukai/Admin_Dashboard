@@ -44,6 +44,8 @@ const AddCategory = () => {
 
   const handleImageUpload = async (e) => {
     const files = Array.from(e.target.files);
+    console.log(files);
+    
     if (files.length === 0) return;
 
     const validTypes = ["image/jpeg", "image/png", "image/webp"];

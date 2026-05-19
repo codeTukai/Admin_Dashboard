@@ -137,11 +137,13 @@ export const editData = async (url, data, config = {}) => {
 // src/utils/api.js
 export const uploadImage = async (url, formData) => {
   const token = localStorage.getItem("accessToken");
-  console.log(token);
+  
   
 
   // Step 1: Validate VITE_API_URL and the url argument
   const baseUrl = import.meta.env.VITE_API_URL;
+  console.log(baseUrl);
+  
   if (!baseUrl) {
     throw new Error("VITE_API_URL is not defined in .env file.");
   }
@@ -152,13 +154,13 @@ export const uploadImage = async (url, formData) => {
 
   const fullUrl = baseUrl + url;
 
-  // Optional debug log
   console.log("uploadImage ➜", fullUrl);
 
   // Step 2: Display what’s being uploaded
   for (let pair of formData.entries()) {
     console.log(`${pair[0]}:`, pair[1]);
   }
+console.log(pair);
 
   try {
     const response = await fetch(fullUrl, {
