@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { OtpBox } from "../../Components/index";
+import {OtpBox} from '../../Components/index'
 import Button from "@mui/material/Button";
 import { postData } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
@@ -17,8 +17,10 @@ const Verify = () => {
     const email = localStorage.getItem("userEmail");
     if (!email) {
       context.alertBox("error", "Email not found. Please try again.");
+      
     } else {
       setUserEmail(email);
+      
     }
   }, [navigate, context]);
 
@@ -26,9 +28,6 @@ const Verify = () => {
   const handleOtpChange = (value) => {
     setOtp(value);
   };
-  const handleOtpResend = ()=>{
-
-  }
 
   // Submit OTP for verification
   const verifyOTP = async (e) => {
@@ -50,18 +49,13 @@ const Verify = () => {
       const res = await postData(url, { email: userEmail, otp });
 
       if (res?.error === false) {
-        context.alertBox(
-          "success",
-          res?.message || "OTP verified successfully"
-        );
-        navigate("/");
+        context.alertBox("success", res?.message || "OTP verified successfully");
+        navigate("/")
 
         localStorage.removeItem("userEmail");
         localStorage.removeItem("actionType");
 
-        navigate(
-          actionType === "forgot-password" ? "/forgot-password" : "/login"
-        );
+        navigate(actionType === "forgot-password" ? "/forgot-password" : "/login");
       } else {
         context.alertBox("error", res?.message || "OTP verification failed");
       }
@@ -80,25 +74,11 @@ const Verify = () => {
           <div className="text-center flex items-center justify-center">
             <img src="/verify.png" width="80" alt="verify" />
           </div>
-
-          <h3 className="text-center text-[18px] text-black mt-4 mb-1">
-            Verify OTP
-          </h3>
-
-          <div className="flex items-center justify-center gap-10 mb-2">
-            <p className="text-[14px]">
-              OTP sent to{" "}
-              <span className="text-[#db1b1b] font-bold">{userEmail}</span>
-            </p>
-
-            <button
-            onClick={(e)=>(handleOtpResend)}
-              type="button"
-              className="text-blue-600 text-[14px] font-medium hover:underline"
-            >
-              Resend OTP
-            </button>
-          </div>
+          <h3 className="text-center text-[18px] text-black mt-4 mb-1">Verify OTP</h3>
+          <p className="text-center mt-0 mb-4">
+            OTP sent to{" "}
+            <span className="text-[#db1b1b] font-bold">{userEmail}</span>
+          </p>
 
           <form onSubmit={verifyOTP}>
             <OtpBox length={6} onChange={handleOtpChange} />
