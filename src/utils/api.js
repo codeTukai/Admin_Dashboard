@@ -2,6 +2,9 @@ import axios from "axios";
 
 const apiUrl=import.meta.env.VITE_API_URL;
 
+console.log(apiUrl);
+
+
 //  POST function
 export const postData = async (url, formData, includeToken = true) => {
   try {
