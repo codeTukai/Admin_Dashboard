@@ -72,7 +72,7 @@ const DashBoard = () => {
 
 
 
-//
+
 
 const [categoryFilterVal, setCategoryFilterVal] = useState("");
  const [subCategoryFilterVal, setSubCategoryFilterVal] = useState("");
@@ -94,7 +94,7 @@ const handleChangeCatFilter = (event) => {
     setThirdSubCatFilterVal(""); // Reset third-level category
 
     if (!selectedCatId) {
-      getProducts(); // Load all products if "All Categories" selected
+      getProducts(); 
       return;
     }
 
@@ -104,7 +104,7 @@ const handleChangeCatFilter = (event) => {
           setProductData(res.products);
           setTimeout(()=>{
 
-            setLoading(false); //  update loading state after fetching
+            setLoading(false); 
           }, 300); //  update local product list
         } else {
           setProductData([]);
@@ -160,7 +160,7 @@ const handleChangeCatFilter = (event) => {
         if (res?.products?.length > 0) {
           setProductData(res.products);
           setTimeout(() => {
-            setLoading(false); //  update loading state after fetching
+            setLoading(false); 
           }, 300); // update local product list
         } else {
           setProductData([]);
@@ -250,7 +250,7 @@ const handleChangeCatFilter = (event) => {
             console.warn("Product deletion failed:", res);
           }
         } catch (err) {
-          console.error("❌ Error deleting product:", err);
+          console.error(" Error deleting product:", err);
         }
       };
 
@@ -330,12 +330,12 @@ const handleChangeCatFilter = (event) => {
   ]);
   return (
     <>
-      {/* Greeting Section */}
+      
       <div className="w-full px-5 py-4 bg-white shadow-sm rounded-lg mb-6 flex flex-wrap items-center justify-between">
-        {/* Left: Greeting */}
+     
         <div className="info max-w-[55%]">
           <h1 className="text-xl font-semibold text-gray-800">
-            Good Morning, <span className="text-indigo-600">Cameron 👋</span>
+            Good Morning, <span className="text-indigo-600">Cameron 👋</span> 
           </h1>
           <p className="text-sm text-gray-500 mt-1">
             Here's what’s happening on your store today. See the statistics at
