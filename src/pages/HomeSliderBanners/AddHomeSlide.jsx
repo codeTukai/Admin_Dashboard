@@ -152,7 +152,6 @@ const AddHomeSlide = () => {
           </div>
         </div>
 
-        {/* Submit Button */}
         <div className="w-[250px]">
           <Button
             type="submit"
