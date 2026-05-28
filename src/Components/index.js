@@ -1,4 +1,4 @@
 import OtpBox from "./OtpBox";
-export{
+export {
     OtpBox
 }

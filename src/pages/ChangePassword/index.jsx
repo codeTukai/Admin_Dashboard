@@ -22,7 +22,7 @@ const ChangePassword = () => {
 
   const token = localStorage.getItem("resetToken");
 
-  //  Load verified email
+ 
   useEffect(() => {
     const savedEmail = localStorage.getItem("userEmail");
 
@@ -64,7 +64,7 @@ const ChangePassword = () => {
 
   return (
     <section className="bg-white w-full h-full relative">
-      {/* Header */}
+      
       <header className="w-full fixed top-0 left-0 px-4 py-3 flex items-center justify-between z-50 bg-white shadow-sm">
         <Link to="/">
           <img src="pattern.jpg" className="w-[130px]" alt="logo" />
@@ -85,21 +85,21 @@ const ChangePassword = () => {
         </div>
       </header>
 
-      {/* Background */}
+     
       <img
         src="/pattern.jpg"
         className="w-full fixed top-0 left-0 opacity-5 z-0"
         alt=""
       />
 
-      {/* Card */}
+
       <div className="loginBox w-[420px] mx-auto mt-28 relative z-50 p-8 bg-white shadow-lg rounded-lg">
         <h2 className="text-center text-[22px] font-semibold mb-6">
           Reset Password
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Email */}
+         
           <TextField
             type="email"
             label="Email"
@@ -109,7 +109,6 @@ const ChangePassword = () => {
             helperText="Email verified via OTP"
           />
 
-          {/* New Password */}
           <TextField
             type={showNewPassword ? "text" : "password"}
             label="New Password"
@@ -130,7 +129,6 @@ const ChangePassword = () => {
             }}
           />
 
-          {/* Confirm Password */}
           <TextField
             type={showConfirmPassword ? "text" : "password"}
             label="Confirm Password"
@@ -153,7 +151,7 @@ const ChangePassword = () => {
             }}
           />
 
-          {/* Button */}
+      
           <Button
             type="submit"
             fullWidth
