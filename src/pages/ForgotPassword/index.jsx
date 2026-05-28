@@ -50,7 +50,7 @@ const ForgotPassword = () => {
           email.trim()
         );
 
-        // go verify page
+        
         navigate("/verify");
 
       } else {
@@ -96,7 +96,7 @@ const ForgotPassword = () => {
             onSubmit={handleSubmit}
           >
 
-            {/* Email */}
+       
             <div className="form-group w-full mb-5">
 
               <TextField
@@ -114,7 +114,7 @@ const ForgotPassword = () => {
 
             </div>
 
-            {/* Submit */}
+        
             <Button
               type="submit"
               disabled={!email || isLoading}
