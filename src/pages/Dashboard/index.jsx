@@ -347,20 +347,21 @@ const handleChangeCatFilter = (event) => {
 
           <div className="mt-4">
             <Button
-              variant="contained"
-              startIcon={<FaPlus />}
-              sx={{
-                backgroundColor: "#4f46e5",
-                textTransform: "capitalize",
-                "&:hover": {
-                  backgroundColor: "#4338ca",
-                },
-              }}
-              onClick={()=>context.setIsOpenFullScreenPanel({open:true, model:'Add product'})}
-            >
-              Add Product
-            </Button>
+            variant="contained"
+            className="!bg-blue-600 !text-white normal-case shadow-sm hover:shadow-md"
+            onClick={() =>
+              context.setIsOpenFullScreenPanel({
+                open: true,
+                model: "Add Product",
+              })
+            }
+          >
+            Add Product
+          </Button>
           </div>
+
+
+
         </div>
 
        
@@ -680,11 +681,18 @@ const handleChangeCatFilter = (event) => {
             <Button className="btn !bg-green-600 !text-white border-t-neutral-50">
               Export
             </Button>
-            <Button className="btn !bg-blue-600 !text-white border-t-neutral-50"
-            onClick={()=>context.setIsOpenFullScreenPanel({open:true, model:'Add product'})}
-            >
-              Add Product
-            </Button>
+            <Button
+            variant="contained"
+            className="!bg-blue-600 !text-white normal-case shadow-sm hover:shadow-md"
+            onClick={() =>
+              context.setIsOpenFullScreenPanel({
+                open: true,
+                model: "Add Product",
+              })
+            }
+          >
+            Add Product
+          </Button>
           </div>
         </div>
         <br />
