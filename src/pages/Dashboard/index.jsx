@@ -70,7 +70,7 @@ const DashBoard = () => {
   const [page, setPage] = React.useState(0);
 
 
-
+const user = JSON.parse(localStorage.getItem("user"));
 
 
 
@@ -328,6 +328,9 @@ const handleChangeCatFilter = (event) => {
       amt: 2100,
     },
   ]);
+
+
+  
   return (
     <>
       
@@ -335,7 +338,7 @@ const handleChangeCatFilter = (event) => {
      
         <div className="info max-w-[55%]">
           <h1 className="text-xl font-semibold text-gray-800"> 
-            Good Morning, <span className="text-indigo-600">{user?.name}</span> 
+            Good Morning, <span className="text-indigo-600"> {context.userData?.name?.split(" ")[0] || "Admin"}</span> 
           </h1>
           <p className="text-sm text-gray-500 mt-1">
             Here's what’s happening on your store today. See the statistics at

@@ -144,6 +144,8 @@ const Login = () => {
     }
   }, [context.isLogin, context.userData]);
 
+  
+
   return (
     <section className="bg-white min-h-screen relative section py-10 bg-cover bg-center bg-no-repeat flex items-center"
     style={{ backgroundImage: "url('/background.jpeg')" }}
