@@ -55,7 +55,7 @@ const Verify = () => {
         localStorage.removeItem("userEmail");
         localStorage.removeItem("actionType");
 
-        navigate(actionType === "forgot-password" ? "/forgot-password" : "/login");
+        
       } else {
         context.alertBox("error", res?.message || "OTP verification failed");
       }
