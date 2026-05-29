@@ -334,7 +334,7 @@ const handleChangeCatFilter = (event) => {
       <div className="w-full px-5 py-4 bg-white shadow-sm rounded-lg mb-6 flex flex-wrap items-center justify-between">
      
         <div className="info max-w-[55%]">
-          <h1 className="text-xl font-semibold text-gray-800"> // add username from database
+          <h1 className="text-xl font-semibold text-gray-800"> 
             Good Morning, <span className="text-indigo-600">Cameron 👋</span> 
           </h1>
           <p className="text-sm text-gray-500 mt-1">
