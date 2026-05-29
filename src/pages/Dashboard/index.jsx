@@ -335,7 +335,7 @@ const handleChangeCatFilter = (event) => {
      
         <div className="info max-w-[55%]">
           <h1 className="text-xl font-semibold text-gray-800"> 
-            Good Morning, <span className="text-indigo-600">Cameron 👋</span> 
+            Good Morning, <span className="text-indigo-600">{user?.name}</span> 
           </h1>
           <p className="text-sm text-gray-500 mt-1">
             Here's what’s happening on your store today. See the statistics at
