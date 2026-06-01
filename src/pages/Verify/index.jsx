@@ -50,12 +50,12 @@ const Verify = () => {
 
       if (res?.error === false) {
         context.alertBox("success", res?.message || "OTP verified successfully");
-        navigate("/")
+        // navigate("/")
 
         localStorage.removeItem("userEmail");
         localStorage.removeItem("actionType");
 
-        
+         navigate(actionType === "forgot-password" ? "/forgot-password" : "/login");
       } else {
         context.alertBox("error", res?.message || "OTP verification failed");
       }
