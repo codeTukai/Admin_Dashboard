@@ -9,7 +9,7 @@ import { FaFirstOrder, FaAngleDown } from "react-icons/fa6";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { Collapse } from "react-collapse";
 import { MyContext } from "../../App";
-// import {logout} from "../../../src/pages/"
+
 
 const Sidebar = () => {
   const [openHomeSlides, setOpenHomeSlides] = useState(false);
@@ -21,7 +21,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar fixed top-0 left-0 bg-white h-full border-r border-[rgba(0,0,0,0.1)] py-1 px-1 overflow-y-auto">
-      {/* Logo */}
+     
       <div className="py-2 w-full flex justify-start">
         <Link to={"/"}>
           <img src="pattern.jpg" className="w-[130px]" alt="logo" />

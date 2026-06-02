@@ -50,7 +50,7 @@ const Verify = () => {
 
       if (res?.error === false) {
         context.alertBox("success", res?.message || "OTP verified successfully");
-        // navigate("/")
+        
 
         localStorage.removeItem("userEmail");
         localStorage.removeItem("actionType");
