@@ -417,7 +417,7 @@ const handleChangeCatFilter = (event) => {
             value={subCategoryFilterVal}
             onChange={handleChangeSubCatFilter}
             displayEmpty
-            disabled={!categoryFilterVal} // Disable when no category is selected
+            disabled={!categoryFilterVal} 
           >
             <MenuItem value="">
               <em>All Subcategories</em>
@@ -462,7 +462,7 @@ const handleChangeCatFilter = (event) => {
           </Select>
         </div>
 
-       {/* add some functionality  */}
+      
         <div className="col w-[20%] ml-auto">
           <h4 className="font-semibold text-sm text-gray-700 mb-2">
             Search Products

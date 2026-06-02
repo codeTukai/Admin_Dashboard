@@ -98,7 +98,7 @@ const Header = () => {
           context.isSidebarOpen ? "pl-[260px]" : "pl-[70px]"
         } `}
       >
-        {/* Sidebar Toggle */}
+
         <Button
           className="!w-[35px] !h-[35px] !rounded-full !min-w-[40px] !text-[rgba(0,0,0,0.8)]"
           onClick={() => context.setisSidebarOpen(!context.isSidebarOpen)}
@@ -106,16 +106,15 @@ const Header = () => {
           <RiMenuFold4Line className="text-[20px]" />
         </Button>
 
-        {/* Right Side Icons */}
+
         <div className="flex items-center justify-end gap-3">
-          {/* Notifications */}
+         
           <IconButton>
             <StyledBadge badgeContent={4} color="secondary">
               <IoMdNotificationsOutline className="text-[22px]" />
             </StyledBadge>
           </IconButton>
 
-          {/* Logged In Menu */}
           {context.isLogin === true ? (
             <div className="relative">
               <div
@@ -138,7 +137,7 @@ const Header = () => {
                 anchorOrigin={{ vertical: "top", horizontal: "right" }}
                 transformOrigin={{ vertical: "top", horizontal: "right" }}
               >
-                {/* User Info */}
+               
                 <MenuItem>
                   <div className="flex items-center gap-3">
                     <Avatar size={40} />

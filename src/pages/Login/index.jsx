@@ -225,7 +225,6 @@ const Login = () => {
         className="w-full fixed top-0 left-0 opacity-5 z-0"
       />
 
-      {/* Login Card */}
       <div className="loginBox w-[45%] min-h-[450px] mx-auto mt-28 relative z-10 p-6 bg-white shadow-lg rounded-lg">
         <div className="text-center">
           <img src="/icon.webp" className="w-[150px] mx-auto" alt="icon" />
@@ -234,7 +233,7 @@ const Login = () => {
           Welcome Back! <br /> Sign in with your credentials
         </h1>
 
-        {/* Social Login */}
+      
         <div className="flex justify-center gap-4 mt-5">
           <Button
             onClick={handleClickGoogle}
@@ -263,7 +262,7 @@ const Login = () => {
           <span className="w-[100px] h-[1px] bg-gray-300"></span>
         </div>
 
-        {/* Form */}
+     
         <form onSubmit={handleSubmit} className="mt-6">
           <div className="mb-5">
             <TextField

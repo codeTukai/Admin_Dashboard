@@ -80,15 +80,16 @@ const SignUp = () => {
       <img src="/pattern.jpg" className="w-[130px] relative -top-90 left-10" alt="logo"/>
                 
         <div className="card shadow-md w-[400px] m-auto rounded-md bg-white p-5 px-10">
+       <Link
+       to="/"
+       >
         <img
         src="/background.jpeg"
         alt=""
         className="w-full fixed top-0 left-0 opacity-5 z-0"
       />
-          <h3 className="text-center text-[18px] text-black">
-            Register with a new Account
-          </h3>
-
+       
+       </Link>
           <form className="w-full mt-5" onSubmit={handleSubmit}>
             <div className="form-group w-full mb-5">
               <TextField
@@ -158,14 +159,16 @@ const SignUp = () => {
             </div>
 
             <p className="text-center">
-              Already have an account?{" "}
-              <Link
-                className="link text-[14px] font-[600] text-amber-700"
-                to="/login"
-              >
-                Login
-              </Link>
-            </p>
+  Already have an account?{" "}
+  <button className="cursor-pointer ">
+    <Link
+      to="/login"
+      className="link text-[14px] font-[600] text-amber-700 cursor-pointer"
+    >
+      Login
+    </Link>
+  </button>
+</p>
 
             <p className="text-center font-[500] mt-4">
               Or Continue With Social Account
