@@ -13,13 +13,13 @@ import { RiMenuFold4Line, RiLogoutCircleRLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FaCircleUser } from "react-icons/fa6";
 
-// Context
+
 import { MyContext } from "../../App";
 import AddProduct from "../../pages/Products/AddProduct";
 import AddHomeSlide from "../../pages/HomeSliderBanners/AddHomeSlide";
 import AddCategory from "../../pages/Category/addCategory";
 import AddSubCategory from "../../pages/Category/addSubCategory";
-// import EditProduct from "../../pages/Category/editProduct";
+
 
 
 
@@ -154,7 +154,7 @@ const Header = () => {
 
                 <Divider />
 
-                {/* Profile */}
+              
                 <MenuItem
                   onClick={() => {
                     handleCloseMyAcc();
