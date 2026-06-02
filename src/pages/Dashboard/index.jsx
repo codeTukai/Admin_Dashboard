@@ -697,7 +697,7 @@ const handleChangeCatFilter = (event) => {
         </div>
         <br />
 
-        <TableContainer sx={{ maxHeight: 440 }}>
+        {/* <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
@@ -1532,10 +1532,8 @@ const handleChangeCatFilter = (event) => {
               </TableRow>
             </TableBody>
           </Table>
-        </TableContainer>
+        </TableContainer> */}
 
-
-   
             <div className="relative overflow-x-auto">
               <table className="w-full text-sm text-left text-gray-500">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
