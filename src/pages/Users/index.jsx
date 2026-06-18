@@ -23,9 +23,9 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const columns = [
   { id: "image", label: "USER IMAGE", minWidth: 150 },
-  { id: "name", label: "USER NAME", minWidth: 150 },
-  { id: "email", label: "EMAIL", minWidth: 150, align: "right" },
-  { id: "number", label: "PH-NUMBER", minWidth: 80, align: "right" },
+  { id: "name", label: "USER NAME", minWidth: 160 },
+  { id: "email", label: "EMAIL", minWidth: 30 },
+  { id: "number", label: "PH-NUMBER" },
 
 ];
 
@@ -82,7 +82,7 @@ const Users = () => {
 
         <br />
 
-        <TableContainer sx={{ maxHeight: 440 }}>
+        <TableContainer sx={{ maxHeight: 400 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
