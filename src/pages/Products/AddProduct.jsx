@@ -17,12 +17,12 @@ import UploadBox from "../../Components/UploadBox";
 const AddProduct = () => {
   const context = useContext(MyContext);
   const [isLoading, setIsLoading] = useState(false);
-  const [images, setImages] = useState([]);
+  
   const navigate = useNavigate();
   const [ramOptions, setRamOptions] = useState([]);
   const [sizeOptions, setSizeOptions] = useState([]);
   const [weightOptions, setWeightOptions] = useState([]);
-  const [previewsFun, setPreviewsFun] = useState();
+
 
   const [formFields, setFormFields] = useState({
     name: "",
@@ -73,12 +73,12 @@ const AddProduct = () => {
     ));
   };
 
-  const setsBannerImagesFun = (previewsArr) => {
-  setFormFields((prev) => ({
-    ...prev,
-    bannerImages: previewsArr,
-  }));
-};
+//   const setsBannerImagesFun = (previewsArr) => {
+//   setFormFields((prev) => ({
+//     ...prev,
+//     bannerImages: previewsArr,
+//   }));
+// };
 
 
   useEffect(() => {

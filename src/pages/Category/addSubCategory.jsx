@@ -83,6 +83,7 @@ const AddSubCategory = () => {
     if (formFields.name.trim() === "" || !formFields.parentId) {
       context.alertBox("error", "Fill in all fields for sub-category");
       setIsLoading((prev) => ({ ...prev, sub: false }));
+
       return;
     }
 
